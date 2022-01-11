@@ -6,7 +6,7 @@ export const environment = {
   production: false
 };
 
-
+export const API_PATH = "https://www.superheroapi.com/api.php/5334265659935938/"
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

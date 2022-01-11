@@ -1,0 +1,16 @@
+<hero-search (emmitSearch)="getSearch($event)"></hero-search>
+
+<section class="listagem">
+  <ng-template ngFor let-hero [ngForOf]="getAllHeros">
+    <a [routerLink]="['deatails', hero.id]" class="hero" >
+      <section class="hero__status">
+        <h2>{{hero.name}}</h2>
+        <p>{{hero.biography["full-name"]}}</p>
+      </section>
+      <section class="hero__image">
+        <img [src]="hero.image.url" [alt]="hero.name">
+      </section>
+    </a>
+  </ng-template>
+</section>
+

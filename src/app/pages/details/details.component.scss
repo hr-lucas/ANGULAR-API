@@ -3,7 +3,7 @@
 :host {
 	main {
 		margin-top: rem-calc(40);
-		.pokemon__names {
+		.hero__names {
 			position: relative;
 			display: flex;
 			align-items: flex-end;
@@ -35,7 +35,7 @@
 			}
 		}
 
-		.pokemon__status {
+		.hero__status {
 			position: relative;
 
 			img {
@@ -87,7 +87,7 @@
 		@media (max-width: 420px) {
 			margin-top: rem-calc(10);
 
-			.pokemon__names {
+			.hero__names {
 				h1 {
 					font-size: rem-calc(20);
 				}
@@ -98,7 +98,7 @@
 				}
 			}
 
-			.pokemon__status {
+			.hero__status {
 				position: relative;
 
 				img {

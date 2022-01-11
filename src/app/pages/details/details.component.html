@@ -1,30 +1,80 @@
-<poke-header></poke-header>
+<hero-header></hero-header>
 
 <main>
     <ng-template [ngIf]="isLoading">
-        <section class="pokemon__names">
-            <h1>{{pokemon[0].name}}</h1>
-            <h2>{{pokemon[1].names[0].name}}</h2>
+        <section class="hero__names">
+            <h1>{{hero.name}}</h1>
         </section>
     
-        <section class="pokemon__status">
+        <section class="hero__status">
             <img 
-            [src]="pokemon[0].sprites.other.dream_world.front_default" 
-            [alt]="pokemon[0].name"
+            [src]="hero.image.url" 
+            [alt]="hero.name"
             >
     
-            <article class="pokemon__status__statistics">
+            <article class="hero__status__statistics">
                 <section>
-                    <h3>Estátisticas</h3>
-    
-                    <ol>
-                        <li *ngFor="let value of pokemon[0].stats">
-                            {{value.stat.name}}
+                    <h3>{{hero.biography["full-name"]}}</h3>
+                    <ol *ngFor="let valor of hero.powerstats | keyvalue">
+                        <li>
+                            {{valor.key }}
                             <strong>
-                                {{value.base_stat}}
+                                {{valor.value}}
                             </strong>
                         </li>
                     </ol>
+                
+                 
+                    <div class="detalhes" style="margin: 20px 0 ;">
+                           
+                    <ol >
+                        <li>
+                            Alter Egos:
+                            <strong>
+                                {{hero.biography["alter-egos"]}}
+                            </strong>
+                        </li>
+
+                        <li>
+                            Lugar de Nascimento
+                            <strong>
+                                {{hero.biography["place-of-birth"]}}
+                            </strong>
+                        </li>
+                        <li>
+                            Primeira aparição
+                            <strong>
+                                {{hero.biography["first-appearance"]}}
+                            </strong>
+                        </li>
+
+                        <li>
+                            Editora
+                            <strong>
+                                {{hero.biography.publisher}}
+                            </strong>
+                        </li>
+                        <li>
+                            Sexo
+                            <strong>
+                                {{hero.appearance.gender}}
+                            </strong>
+                        </li>
+                        <li>
+                            Raça
+                            <strong>
+                                {{hero.appearance.race}}
+                            </strong>
+                        </li>
+                        <li>
+                            Profissão
+                            <strong>
+                                {{hero.work.occupation}}
+                            </strong>
+                        </li>
+                    </ol>
+                    </div>   
+
                 </section>
                 <a 
                 [routerLink]="['']" 
