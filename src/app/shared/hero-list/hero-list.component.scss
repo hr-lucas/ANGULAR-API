@@ -11,7 +11,7 @@ $padding: rem-calc(20);
     justify-content: space-between;
     padding: $padding 0;
     
-    .pokemon{
+    .hero{
       position: relative;
       display: flex;
       border-radius: rem-calc(10);
@@ -73,7 +73,7 @@ $padding: rem-calc(20);
           bottom: $padding;
           right: $padding;
   
-          background: url(../../../assets/icons/background-list-pokemos.svg) no-repeat;
+          background: url(../../../assets/icons/background-list-hero.svg) no-repeat;
   
           img{
             width: rem-calc(60);

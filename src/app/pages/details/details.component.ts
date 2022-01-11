@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { forkJoin } from 'rxjs';
 // Serviçes
-import { PokeApiService } from 'src/app/service/poke-api.service';
+import { HeroApiService } from 'src/app/service/hero-api.service';
+
 
 @Component({
   selector: 'app-details',
@@ -10,32 +10,31 @@ import { PokeApiService } from 'src/app/service/poke-api.service';
   styleUrls: ['./details.component.scss']
 })
 export class DetailsComponent implements OnInit {
-  private urlPokemon: string = 'https://pokeapi.co/api/v2/pokemon'
-  private urlname: string = 'https://pokeapi.co/api/v2/pokemon-species'
+  
 
-  public pokemon: any;
+
+  public hero: any;
   public isLoading: boolean = false;
+  public title: any;
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private pokeApiService: PokeApiService
+    private heroApiService: HeroApiService
   ) { }
 
   ngOnInit(): void {
-    this.getpokemon;
+    this.getHero();
   }
 
-  get getpokemon(){
+   getHero(){
     const id = this.activatedRoute.snapshot.params['id'];
-    const pokemon = this.pokeApiService.apiGetPokemos(`${this.urlPokemon}/${id}`)
-    const name =  this.pokeApiService.apiGetPokemos(`${this.urlname}/${id}`)
 
-    return forkJoin([pokemon, name]).subscribe(
-      res =>{
-        this.pokemon = res;
-        this.isLoading = true;
-      }
-    )
+this.heroApiService.apiGetId(id).subscribe((res)=>{
+  console.log('teste',res)
+  this.hero = res;
+  this.isLoading = true;
+})
+
 
   }
 

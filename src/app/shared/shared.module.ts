@@ -3,9 +3,9 @@ import { CommonModule } from '@angular/common';
 
 
 // Component's
-import { PokeHeaderComponent } from './poke-header/poke-header.component';
-import { PokeSearchComponent } from './poke-search/poke-search.component';
-import { PokeListComponent } from './poke-list/poke-list.component';
+import { heroHeaderComponent } from './hero-header/hero-header.component';
+import { HeroSearchComponent } from './hero-search/hero-search.component';
+import { HeroListComponent } from './hero-list/hero-list.component';
 
 import { RouterModule } from '@angular/router';
 
@@ -13,14 +13,14 @@ import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
-    PokeHeaderComponent,
-    PokeSearchComponent,
-    PokeListComponent
+    heroHeaderComponent,
+    HeroSearchComponent,
+    HeroListComponent
   ],
   exports: [
-    PokeHeaderComponent,
-    PokeSearchComponent,
-    PokeListComponent
+    heroHeaderComponent,
+    HeroSearchComponent,
+    HeroListComponent
   ],
   imports: [
     CommonModule,
